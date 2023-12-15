@@ -208,7 +208,8 @@ abstract class AssetPickerBuilderDelegate<Asset, Path> {
 
   /// Whether the permission is limited currently.
   /// 当前的权限是否为受限
-  bool get isPermissionLimited => permission.value == PermissionState.limited;
+  bool get isPermissionLimited =>
+      false; // permission.value == PermissionState.limited;
 
   bool effectiveShouldRevertGrid(BuildContext context) =>
       shouldRevertGrid ?? isAppleOS(context);
