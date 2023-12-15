@@ -2221,16 +2221,9 @@ class DefaultAssetPickerBuilderDelegate
           value: provider,
           builder: (BuildContext context, _) => Material(
             color: theme.canvasColor,
-            child: Stack(
-              fit: StackFit.expand,
-              children: <Widget>[
-                if (isAppleOS(context))
-                  appleOSLayout(context)
-                else
-                  androidLayout(context),
-                if (Platform.isIOS) iOSPermissionOverlay(context),
-              ],
-            ),
+            child: isAppleOS(context)
+                ? appleOSLayout(context)
+                : androidLayout(context),
           ),
         ),
       ),
