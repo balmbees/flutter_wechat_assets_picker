@@ -2228,4 +2228,8 @@ class DefaultAssetPickerBuilderDelegate
       ),
     );
   }
+
+  void pickMoreImage() {
+    PhotoManager.presentLimited();
+  }
 }
