@@ -193,7 +193,7 @@ abstract class AssetPickerBuilderDelegate<Asset, Path> {
 
   /// Height for the permission limited bar.
   /// 权限受限栏的高度
-  double get permissionLimitedBarHeight => isPermissionLimited ? 75 : 0;
+  double get permissionLimitedBarHeight => 0; //isPermissionLimited ? 75 : 0;
 
   /// Notifier for the current [PermissionState].
   /// 当前 [PermissionState] 的监听
@@ -208,9 +208,7 @@ abstract class AssetPickerBuilderDelegate<Asset, Path> {
 
   /// Whether the permission is limited currently.
   /// 当前的权限是否为受限
-  bool get isPermissionLimited =>
-      false; // permission.value == PermissionState.limited;
-
+  bool get isPermissionLimited => permission.value == PermissionState.limited;
   bool effectiveShouldRevertGrid(BuildContext context) =>
       shouldRevertGrid ?? isAppleOS(context);
 
